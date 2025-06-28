@@ -15,7 +15,7 @@ export default function ProductCard({ data }: { data: any }) {
                     <h1 className='font-semibold text-xl'>{data.title}</h1>
                     <Button variant={"outline"} className='text-xl flex gap-1 items-center'><IndianRupee/>{data.price || 0}</Button>
                 </div>
-                <p>{data.description.text.slice(0, 70) + "..."}</p>
+                <p>{data.miniDescription.text.slice(0, 70) + "..."}</p>
                 <Link href={`/products/${data.slug}`}><Button className='w-full mt-2 flex items-center gap-2'><Eye/> View</Button></Link>
             </div>
         </div>

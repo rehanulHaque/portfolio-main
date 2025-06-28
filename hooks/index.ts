@@ -1,6 +1,6 @@
 "use server"
 
-import { BlogDataTypes, BlogPageDataTypes, ProductsTypes, ProjectDataTypes } from "@/types/dataTypes";
+import { BlogDataTypes, BlogPageDataTypes, ProductsTypes, ProjectDataTypes, SingleProductsTypes } from "@/types/dataTypes";
 import { GraphQLClient } from "graphql-request"
 
 const client = new GraphQLClient(process.env.NEXT_API_KEY!)
@@ -61,7 +61,6 @@ export const getBlog = async (id: string) => {
               }
               title
               body {
-                raw
                 html
               }
               blogUrl
@@ -80,7 +79,7 @@ export const getProductsData = async () => {
     query MyQuery {
   products {
     createdAt
-    description {
+    miniDescription {
       text
     }
     downloadUrl
@@ -95,6 +94,35 @@ export const getProductsData = async () => {
   }
 }
     `
-  ) as ProductsTypes;
+  ) as ProductsTypes
   return data.products;
 };
+
+
+export const getSingleProduct = async (slug: string) => {
+  const data = await client.request(
+    `
+   query MyQuery {
+  product(where: {slug: "${slug}"}) {
+    downloadUrl
+    miniDescription {
+      text
+    }
+    id
+    isFree
+    price
+    image {
+      url
+    }
+    title
+    slug
+    features
+    highlights
+    overview
+    pagesIncluded
+  }
+}
+    `
+  ) as SingleProductsTypes;
+  return data.product;
+}

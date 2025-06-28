@@ -34,7 +34,6 @@ export interface BlogPageDataTypes {
     };
     title: string;
     body: {
-      raw: string;
       html: string;
     };
     blogUrl: string;
@@ -44,7 +43,7 @@ export interface BlogPageDataTypes {
 export interface ProductsTypes {
   products: [{
     createdAt: string
-    description: {
+    miniDescription: {
       text: string
     }
     downloadUrl: string
@@ -56,4 +55,26 @@ export interface ProductsTypes {
     title: string
     slug: string
   }]
+}
+
+export interface SingleProductsTypes {
+  product: {
+    createdAt: string
+    miniDescription: {
+      text: string
+    }
+    downloadUrl: string
+    id: string
+    price: number
+    image: {
+      url: string
+    }
+    title: string
+    slug: string
+    isFree: boolean,
+    features: string[]
+    highlights: string[]
+    overview: string
+    pagesIncluded: string[]
+  }
 }
