@@ -11,7 +11,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
     "@graphcms/rich-text-react-renderer": "^0.6.1",
-    "@prisma/client": "^6.10.1",
+    "@prisma/client": "^6.11.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/typography": "^0.5.10",
     "axios": "^1.10.0",

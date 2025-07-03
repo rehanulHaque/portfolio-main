@@ -17,7 +17,7 @@ export async function GET(){
         });
 
         const orders = await Promise.all(
-            ordersData.map(async (order) => {
+            ordersData.map(async (order: any) => {
                 const product = await getProductById(order.productId);
                 return {
                     ...order,

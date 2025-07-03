@@ -19,6 +19,7 @@ export default async function page({ params }: { params: Promise<{ slug: string 
         </div>
         {/* Right */}
         <div className="flex gap-4 items-start justify-center flex-col">
+          <h1 className="font-bold text-xl">In Development</h1>
           <h1 className="font-bold text-xl">{data.title}</h1>
           <div className="flex gap-4 items-center">
             <Button variant={"outline"} className="text-xl flex gap-1 items-center"><IndianRupee />{data.price || 0}</Button>
@@ -63,3 +64,6 @@ export default async function page({ params }: { params: Promise<{ slug: string 
     </div>
   )
 }
+
+
+export const revalidate = 30
