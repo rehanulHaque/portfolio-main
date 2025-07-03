@@ -41,3 +41,4 @@ build
 dist
 /lib/generated/prisma
 service-key.json
+service-key.json
