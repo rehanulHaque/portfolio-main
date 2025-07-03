@@ -4,8 +4,10 @@ import { Logo, Links } from "@/data/NavData";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { loginAction, logoutAction } from "@/action/auth";
+import { Button } from "./ui/button";
 
-const Navbar = () => {
+const Navbar = ({authSession}: any) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -57,6 +59,14 @@ const Navbar = () => {
                 {e.name}
               </Link>
             ))}
+            {authSession ? (
+              <div className="flex mr-4 items-center">
+                <Link href={"/orders"} className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Orders</Link>
+                 <form action={logoutAction}><Button>Logout</Button></form>
+              </div>
+            ): (
+              <form action={loginAction}><Button>Login</Button></form>
+            )}
           </div>
           
           {/* Mobile Hamburger Button */}
@@ -91,6 +101,11 @@ const Navbar = () => {
               {e.name}
             </Link>
           ))}
+          {authSession ? (
+              <form action={logoutAction}><Button>Logout</Button></form>
+            ): (
+              <form action={loginAction}><Button>Login</Button></form>
+            )}
         </div>
       </div>
     </nav>

@@ -126,3 +126,31 @@ export const getSingleProduct = async (slug: string) => {
   ) as SingleProductsTypes;
   return data.product;
 }
+
+export const getProductById = async (id: string) => {
+  const data = await client.request(
+    `
+   query MyQuery {
+  product(where: {id: "${id}"}) {
+    downloadUrl
+    miniDescription {
+      text
+    }
+    id
+    isFree
+    price
+    image {
+      url
+    }
+    title
+    slug
+    features
+    highlights
+    overview
+    pagesIncluded
+  }
+}
+    `
+  ) as SingleProductsTypes;
+  return data.product;
+}
