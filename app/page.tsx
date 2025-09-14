@@ -24,9 +24,13 @@ export default function Home() {
             <h2 className="text-lg sm:text-xl text-gray-600">{Profile.position.text}</h2>
           </div>
           
-          <div className="flex items-center justify-center lg:justify-start mb-4">
+          <div className="flex items-center justify-center lg:justify-start mb-2">
             <span className="mr-2">{Profile.location.icon}</span>
             <h3 className="text-lg sm:text-xl font-light">{Profile.location.text}</h3>
+          </div>
+          <div className="flex items-center justify-center lg:justify-start mb-4">
+            <span className="mr-2">{Profile.ranking.icon}</span>
+            <h3 className="text-lg sm:text-xl font-light text-gray-600">{Profile.ranking.text}</h3>
           </div>
 
           {/* Tags */}

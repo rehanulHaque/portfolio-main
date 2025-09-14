@@ -1,9 +1,7 @@
 import ProjectCard from '@/components/ProjectComponents/ProjectCard';
 import { getProjectsData } from '@/hooks';
-// import { getProjectsData } from '@/hooks/getProjects';
 import { Suspense } from 'react';
 
-// Loading component for Suspense fallback
 const ProjectsLoading = () => (
   <div className="container mx-auto px-4 py-8">
     <h1 className="font-semibold text-2xl mb-8">Projects</h1>

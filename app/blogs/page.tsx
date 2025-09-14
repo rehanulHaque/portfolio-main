@@ -2,7 +2,6 @@ import BlogCard from '@/components/BlogComponents/BlogCard';
 import { getBlogsData } from '@/hooks';
 import { Suspense } from 'react';
 
-
 // Loading component for Suspense fallback
 const BlogsLoading = () => (
   <div className="container mx-auto px-4 py-8">

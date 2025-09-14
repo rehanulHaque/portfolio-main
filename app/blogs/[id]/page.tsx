@@ -2,8 +2,6 @@ import { getBlog } from "@/hooks";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
-
-
 const BlogPage = async (params: {params: {id: string}}) => {
   const blogPageData = await getBlog(params.params.id)
   return (

@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { GrLocation } from "react-icons/gr";
 import { PiStudentBold } from "react-icons/pi";
@@ -6,8 +7,12 @@ const Profile = {
   firstName: "Md Rehanul",
   lastName: "Haque",
   position: {
-    text: 'Currently Student @BDC',
+    text: 'Currently Student @AOT',
     icon: <PiStudentBold/>
+  },
+  ranking: {
+    text: "JEE 1.5L",
+    icon: <Star className="h-4 w-4"/>
   },
   location: { text: "Rishra, Kolkata INDIA", icon: <GrLocation/> },
   summary:
